@@ -1,8 +1,7 @@
 env:
    global:
      - CONAN_REFERENCE: "jsonformoderncpp/2.1.1"
-     - CONAN_USERNAME: "conan"
-     - CONAN_LOGIN_USERNAME: "vthiery"
+     - CONAN_USERNAME: "vthiery"
      - CONAN_CHANNEL: "stable"
      - CONAN_UPLOAD: "https://api.bintray.com/conan/vthiery/conan-packages"
 
@@ -13,12 +12,13 @@ linux: &linux
    python: "3.6"
    services:
      - docker
+
 osx: &osx
    os: osx
    language: generic
+
 matrix:
    include:
-
       - <<: *linux
         env: CONAN_GCC_VERSIONS=5.4 CONAN_DOCKER_IMAGE=lasote/conangcc54
       - <<: *linux
