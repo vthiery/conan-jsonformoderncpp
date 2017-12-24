@@ -13,14 +13,10 @@ linux: &linux
    services:
      - docker
 
-osx: &osx
-   os: osx
-   language: generic
-
 matrix:
    include:
       - <<: *linux
-        env: CONAN_GCC_VERSIONS=6.3 CONAN_DOCKER_IMAGE=lasote/conangcc63
+        env: CONAN_GCC_VERSIONS=7 CONAN_DOCKER_IMAGE=lasote/conangcc7
 
 install:
   - ./.travis/install.sh
