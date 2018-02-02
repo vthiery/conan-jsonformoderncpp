@@ -3,7 +3,8 @@ from conans.tools import download
 
 class JsonForModernCppConan(ConanFile):
     name = "jsonformoderncpp"
-    version = "2.1.1"
+    version = "3.1.0"
+    homepage = "https://github.com/nlohmann/json"
     description = "JSON for Modern C++ parser and generator from https://github.com/nlohmann/json"
     license = "MIT"
     url = "https://github.com/vthiery/conan-jsonformoderncpp"
