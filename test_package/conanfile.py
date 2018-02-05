@@ -1,14 +1,9 @@
 from conans import ConanFile, CMake
 import os
 
-version = "3.0.1"
-channel = os.getenv("CONAN_CHANNEL", "stable")
-username = os.getenv("CONAN_USERNAME", "vthiery")
-
 
 class JsonForModernCppTestConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
-    requires = "jsonformoderncpp/%s@%s/%s" % (version, username, channel)
     generators = "cmake"
 
     def build(self):
