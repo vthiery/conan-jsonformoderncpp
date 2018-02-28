@@ -1,10 +1,11 @@
-from conans import ConanFile, tools
+from conans import ConanFile, CMake, tools
 import os
 
 
 class JsonForModernCppConan(ConanFile):
     name = "jsonformoderncpp"
     version = "3.1.1"
+    settings = "os", "compiler", "arch", "build_type"
     description = "JSON for Modern C++ parser and generator from https://github.com/nlohmann/json"
     license = "MIT"
     url = "https://github.com/vthiery/conan-jsonformoderncpp"
@@ -12,12 +13,17 @@ class JsonForModernCppConan(ConanFile):
     author = "Vincent Thiery (vjmthiery@gmail.com)"
 
     def source(self):
-        tools.download("%s/blob/v%s/LICENSE.MIT" % (self.repo_url, self.version), "LICENSE.MIT")
+        tools.get("%s/archive/v%s.zip" % (self.repo_url, self.version))
 
-        expected_hash = "fde771d4b9e4f222965c00758a2bdd627d04fb7b59e09b7f3d1965abdc848505"
-        tools.get("%s/releases/download/v%s/include.zip" % (self.repo_url, self.version), sha256=expected_hash)
+    def build(self):
+        cmake = CMake(self)
+        cmake.definitions["JSON_BuildTests"] = False
+        cmake.definitions["JSON_MultipleHeaders"] = True
+        cmake.configure(source_folder="json-%s" % self.version)
+        cmake.install()
 
     def package(self):
-        self.copy("*.hpp")
-        self.copy("LICENSE.MIT")
+        self.copy("LICENSE.MIT", src="json-%s" % self.version)
 
+    def package_id(self):
+        self.info.header_only()
