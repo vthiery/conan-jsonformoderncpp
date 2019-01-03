@@ -4,7 +4,7 @@ import os
 
 class JsonForModernCppConan(ConanFile):
     name = "jsonformoderncpp"
-    version = "3.4.0"
+    version = "3.5.0"
     settings = "os", "compiler", "arch", "build_type"
     description = "JSON for Modern C++ parser and generator from https://github.com/nlohmann/json"
     license = "MIT"
