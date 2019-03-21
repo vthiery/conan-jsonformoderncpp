@@ -1,6 +1,6 @@
 env:
    global:
-     - CONAN_REFERENCE: "jsonformoderncpp/3.6.0"
+     - CONAN_REFERENCE: "jsonformoderncpp/3.6.1"
      - CONAN_USERNAME: "vthiery"
      - CONAN_CHANNEL: "stable"
      - CONAN_UPLOAD: "https://api.bintray.com/conan/vthiery/conan-packages"
