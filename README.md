@@ -7,6 +7,10 @@
 
 [Conan](https://bintray.com/vthiery/conan-packages/jsonformoderncpp%3Avthiery) package for Niels Lohmann's [Json For Modern C++](https://github.com/nlohmann/json) single-header library.
 
+## IMPORTANT
+
+**Since [conan-io/conan-center-index](https://github.com/conan-io/conan-center-index) maintains a recipe packaging [nlohmann/json](https://github.com/nlohmann/json) library, this recipe will not be maintained anymore. If possible, please use the package [nlohmann_json](https://conan.io/center/nlohmann_json/3.7.3/) instead of [jsonformoderncpp](https://bintray.com/vthiery/conan-packages/jsonformoderncpp%3Avthiery).**
+
 ## Usage
 
 Add `jsonformoderncpp/x.y.z@vthiery/stable` in the list of requirements of your conanfile, where `x.y.z` is the desired version. See [how to use a conanfile.py](http://docs.conan.io/en/latest/mastering/conanfile_py.html) for more information.
